@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<div id="loading-indicator" style="display: none;">
+  <p>Loading flight data...</p>
+</div>
+<body class="product-page">
+
+  <header>
+    <div class="header-container">
+      <h1 class="company-name">Fly Now Travel Co.</h1>
+      <nav>
+        <div class="nav-container">
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">Destinations</a></li>
+            <li><a href="product.html" class="nav-link">Flights</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="main-content">
+      <h2>Start Your Flight Search</h2>
+      <div id="airport-search-container">
+        <label for="origin-dropdown">Select Origin:</label>
+        <select id="origin-dropdown">
+          <option value="">--Select Origin--</option>
+
+        </select>
+
+        <label for="destination-dropdown">Select Destination:</label>
+        <select id="destination-dropdown">
+          <option value="">--Select Destination--</option>
+        </select>
+
+        <button id="find-flights">Find Flights</button>
+      </div>
+      
+      <div id="airport-code-search">
+        <label for="airport-code-input">Search by Airport Code:</label>
+        <div class="code-search-row">
+          <input type="text" id="airport-code-input" placeholder="e.g. ATL" maxlength="3" />
+          <button id="search-airport-code">Search</button>
+        </div>
+        <div id="airport-code-result"></div>
+      </div>
+      
+      <button id="toggle-view">Switch to Card View</button>
+      <div id="card-container" style="display: none;"></div>
+      <div id="flight-results">
+        <div class="flight-table-wrapper">
+          <table id="flight-grid">
+            <thead>
+              <tr>
+                <th>Airline</th>
+                <th>Flight Number</th>
+                <th>Route ID</th>
+                <th>Aircraft</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Results will be inserted here -->
+            </tbody>
+          </table>
+
+          <div id="pagination-controls" style="margin-top: 10px; text-align: center; background-color: #004e64;">
+            <button id="prev-page"> ← Previous</button>
+            <span id="page-info"></span>
+            <button id="next-page">Next → </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="#" class="footer-link">Destinations</a>
+        <a href="product.html" class="footer-link">Flights</a>
+        <a href="#" class="footer-link">About</a>
+        <a href="#" class="footer-link">Contact</a>
+      </div>
+      <div class="social-media">
+        <a href="#" class="social-link">Facebook</a>
+        <a href="#" class="social-link">Instagram</a>
+        <a href="#" class="social-link">Twitter</a>
+      </div>
+      <div class="newsletter">
+        <p>Subscribe to our newsletter:</p>
+        <form action="#" method="post">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <small>&copy; 2025 Fly Now Travel Co. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="product.js"></script>
+</body>
+
+</html>

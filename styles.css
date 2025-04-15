@@ -1,0 +1,799 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Header Styles */
+header {
+  width: 100%;
+  background-color: #004e64;
+  color: white;
+  padding: 10px 0;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.company-name {
+  font-size: 2.5em;
+}
+
+/* --- Container for Navigation (No Logo) --- */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hide the checkbox toggle */
+.nav-toggle {
+  display: none;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  user-select: none;
+}
+
+.hamburger span {
+  background: white;
+  display: block;
+  height: 3px;
+  width: 100%;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 10px;
+}
+.hamburger span:nth-child(3) {
+  top: 20px;
+}
+
+/* Navigation Menu (Dropdown) Styles */
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #004e64;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Show the dropdown when the checkbox is checked */
+#nav-toggle:checked ~ .nav-menu {
+  max-height: none;
+}
+
+/* Navigation Link Styles */
+.nav-menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-menu .nav-link {
+  display: block;
+  padding: 15px 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.nav-menu .nav-link:hover {
+  background-color: #6ebf6c;
+}
+
+/* GRID STYLING for basic Website!! */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-auto-rows: minmax(80px, auto);
+
+  gap: 10px;
+  margin: 2rem auto;
+  max-width: 70vw;
+}
+
+.main-image {
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  border-radius: 25px;
+}
+
+.content {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  font-size: larger;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.content h2 {
+  margin-bottom: 20px;
+  color: #004e64;
+}
+
+.content p {
+  margin-bottom: 20px; 
+  margin-top: 0;
+  color: #004e64;
+}
+
+.product-link {
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+.middle-image {
+  grid-column: 2;
+  grid-row: 3 / span 2;
+}
+
+.side-images {
+  grid-column: 3;
+  grid-row: 3 / span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.side-images img {
+  width: 100%;
+  height: auto; 
+  border-radius: 8px;
+  max-height: 200px;
+}
+
+.info-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.picture {
+  flex: 1;
+  padding: 10px;
+}
+.picture img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+.main-content {
+  flex: 2;
+  padding: 20px;
+  text-align: left;
+}
+
+.main-content h2 {
+  background-color: #00a5cf;
+  color: white;
+  padding: 20px;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: left; 
+  display:flex;
+  flex-direction:column;
+}
+
+.main-content p {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+}
+.product-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #7ae582;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.product-link:hover {
+  background-color: #6ebf6c;
+}
+
+/* New container for the description and the Flights button */
+.description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.description-container p {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.description-container a.product-link {
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+/*  Testimonials Section */
+.testimonials {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+.testimonials h3 {
+  margin-bottom: 20px;
+  color: #004e64;
+  font-size: 30px;
+}
+.testimonial-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.testimonial {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #00a5cf;
+  border-radius: 5px;
+}
+.testimonial h4 {
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Footer Styles */
+footer {
+  width: 100%;
+  background-color: #004e64;
+  color: #ddd;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.footer-links {
+  margin-bottom: 15px;
+}
+.footer-links a {
+  color: #ddd;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1em;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.social-media {
+  margin-bottom: 15px;
+}
+.social-link {
+  color: #ddd;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1em;
+}
+.social-link:hover {
+  text-decoration: underline;
+}
+.newsletter {
+  margin-bottom: 15px;
+}
+.newsletter input[type="email"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  width: 250px;
+  margin-right: 10px;
+}
+.newsletter button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #7ae582;
+  color: #004e64;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.newsletter p {
+  margin-bottom: 10px;
+}
+
+.newsletter button:hover {
+  background-color: #6ebf6c;
+}
+small {
+  font-size: 0.8em;
+}
+
+/* New container for the description and the Flights button */
+.description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.description-container p {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.description-container a.product-link {
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+/* Marquee Styles */
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  position: relative;
+}
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-animation 350s linear infinite; /* Adjust speed with '20s' */
+  width: max-content;
+}
+
+.marquee__item {
+  margin-right: 40px;
+  padding: 10px;
+  height: 80px; 
+  object-fit: contain; 
+}
+
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      -50%
+    ); 
+  }
+}
+
+/*Origin Search Button*/
+.origin-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.origin-search input,
+.origin-search button {
+  padding: 6px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.origin-search button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.origin-search button:hover {
+  background-color: #0056b3;
+}
+
+/* For the Airports Buttons*/
+#airport-search-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 40px auto;
+  font-size:18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+#airport-code-search {
+  max-width: 300px;
+}
+
+#airport-code-search input {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 6px;
+  width: 100%;
+}
+
+
+#destination-dropdown {
+  margin-top: 5px;
+  font-size:15px;
+}
+#origin-dropdown{
+  margin-top:5px;
+  margin-bottom:5px;
+  font-size:15px;
+}
+#airport-search-container label {
+  margin: 5px 0;
+}
+
+#airport-search-container input {
+  padding: 10px;
+  margin: 5px 0;
+}
+
+/* Flight Table*/
+.flight-table-wrapper {
+  max-height: calc(8 * 50px);
+  overflow-y: auto;
+  min-width: 60vw;
+}
+
+.flight-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.flight-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+#flight-results {
+  min-width: 60vw;
+}
+
+#flight-grid {
+  width: 100%;
+  min-width: 60vw;
+  border-collapse: collapse;
+  background-color: whitesmoke;
+}
+
+#flight-grid th,
+#flight-grid td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+#flight-grid th {
+  background-color: #004e64;
+  color: white;
+  font-weight: bold;
+}
+
+#flight-grid tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.dropdown {
+  position: absolute;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.dropdown-option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-option:hover {
+  background-color: #f0f0f0;
+}
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 1em;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: border 0.3s ease;
+}
+
+select:focus {
+  border-color: #00a5cf;
+  outline: none;
+}
+
+#find-flights {
+  background-color: #7ae582;
+  color: white;
+  padding: 12px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#find-flights:hover {
+  background-color: #6ebf6c;}
+
+  body.product-page {
+    background-image: url('./airplane1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-color: #004e64;
+  }
+
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #search-airport-code {
+    background-color: #7ae582;
+    color: white;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #search-airport-code:hover {
+    background-color: #6ebf6c;
+  }
+  
+
+
+/* Input Field for Airport Code Search */
+#airport-code-input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: border 0.3s ease;
+}
+
+#airport-code-input:focus {
+  border-color: #00a5cf;
+  outline: none;
+}
+
+
+#airport-code-search label,
+#airport-code-result {
+  background-color: #00a5cf;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+.code-search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+#airport-code-result {
+  display: none;
+  margin-top: 10px;
+  padding: 8px 12px;
+  min-height: 20px;
+  width: 100%;
+  background-color: #00a5cf;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+#airport-code-result.visible {
+  display: block;
+}
+#airport-code-input {
+  min-width: 100px;
+  padding: 6px 10px;
+}
+
+#search-airport-code {
+  padding: 6px 12px;
+  background-color: #7ae582;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#search-airport-code:hover {
+  background-color: #6ebf6c;
+}
+
+#airport-code-search {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+#page-info {
+  color: lightgray;
+  font-weight: normal;
+  font-size:15px;
+}
+
+#prev-page {
+color: black;
+padding: 5px;
+border-radius: 5px;
+border: solid #004e64 2px;
+font-size:15px;
+}
+
+#next-page {
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid #004e64 2px;
+  font-size:15px;
+  }
+
+  #card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .flight-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .flight-card h3 {
+    margin-bottom: 10px;
+    color: #004e64;
+  }
+  
+  .flight-card p {
+    margin: 5px 0;
+  }
+  
+  #toggle-view {
+    background-color: #7ae582;
+    color: black;
+    padding: 5px;
+    border: none; 
+    margin-bottom: 5px;
+  }
+  
+/* Laoding Indicator */
+  #loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 9999;
+    font-size: 1.2rem;
+    color: #004e64;
+  }
+
+  /* Plane Animation */
+  #plane-container {
+    position: fixed;
+    top: 30%;
+    left: -200px;
+    z-index: 9999;
+    pointer-events: none;
+  }
+  
+
+  #flying-plane {
+    width: 200px;
+    height: 200px;
+  }
+  
+  #flying-plane.animate {
+    animation: fly-across 2.5s ease-out forwards;
+  }
+  
+  @keyframes fly-across {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(120vw);
+    }
+  }
+  
