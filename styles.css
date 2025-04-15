@@ -386,7 +386,6 @@ small {
 }
 
 /* Marquee Styles */
-
 .marquee-container {
   width: 100%;
   overflow: hidden;
@@ -398,26 +397,14 @@ small {
 .marquee {
   display: flex;
   white-space: nowrap;
-  animation: marquee-animation 350s linear infinite; /* Adjust speed with '20s' */
-  width: max-content;
+  animation: marquee-animation 60s linear infinite; 
 }
 
 .marquee__item {
   margin-right: 40px;
   padding: 10px;
-  height: 80px; 
-  object-fit: contain; 
-}
-
-@keyframes marquee-animation {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(
-      -50%
-    ); 
-  }
+  height: 80px;
+  object-fit: contain;
 }
 
 /*Origin Search Button*/
