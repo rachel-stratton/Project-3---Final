@@ -387,7 +387,7 @@ small {
 
 /* Marquee Styles */
 .marquee-container {
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   background-color: #f1f1f1;
   padding: 10px 0;
